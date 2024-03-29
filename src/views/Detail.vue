@@ -33,8 +33,8 @@ onMounted(async () => {
   showLoader();
   await loadAnime();
   await loadEpisodes();
-  await loadUrls();
   hideLoader();
+  await loadUrls();
 });
 </script>
 <template>
