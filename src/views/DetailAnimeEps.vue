@@ -141,7 +141,7 @@ onMounted(async () => {
       </div>
       <div class="col-6">
         <button class="btn btn-danger" type="button" @click="previos(urls.previous_episode.slug)" v-if="urls.has_previous_episode">
-          <i class="bx bx-left-arrow-alt"></i> Kembali
+          <i class="bx bx-left-arrow-alt"></i> Eps Sebelumnya
         </button>
 
       </div>
