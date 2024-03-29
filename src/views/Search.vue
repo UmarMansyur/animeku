@@ -7,7 +7,7 @@
             <img :src="i.poster" alt="anime" class="img-fluid" width="90">
           </div>
           <div class="col">
-            <RouterLink :to="'/anime/' + i.slug" class="text-decoration-none">
+            <RouterLink :to="'/' + i.slug" class="text-decoration-none">
               <h5 class="mb-0">{{ i.title }}</h5>
             </RouterLink>
             <p class="mb-0 fs-12">Genres: {{ i.genres ? i.genres.map((genre: any) => genre.name).join(', ') : '' }}</p>
