@@ -11,7 +11,7 @@ const currentPage = ref<number>(1);
 const datas = ref<any>({ ongoing_anime: [] });
 const pagination = ref<any>({});
 async function loadAnimeHome() {
-  const response = await fetch('http://localhost:3000/v1' + router.currentRoute.value.path + '/' + currentPage.value);
+  const response = await fetch(import.meta.env.VITE_BASE_URL + router.currentRoute.value.path + '/' + currentPage.value);
   const data = await response.json();
   datas.value = data.data;
   pagination.value = data.pagination;
