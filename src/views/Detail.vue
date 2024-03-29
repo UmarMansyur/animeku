@@ -15,7 +15,7 @@ const loadAnime = async () => {
 
 const totalEpisodes = ref<number>(0);
 const loadEpisodes = async () => {
-  const response = await fetch(import.meta.env.VITE_BASE_URL + '/' + router.currentRoute.value.params.id + '/episodes');
+  const response = await fetch(import.meta.env.VITE_BASE_URL + '/anime/' + router.currentRoute.value.params.id + '/episodes');
   const data = await response.json();
   totalEpisodes.value = data.data.length;
 };
@@ -23,7 +23,7 @@ const loadEpisodes = async () => {
 const urls = ref<any>([]);
 const loadUrls = async () => {
   for (let i = 1; i <= totalEpisodes.value; i++) {
-    const response = await fetch(import.meta.env.VITE_BASE_URL + '/' + router.currentRoute.value.params.id + '/episodes/' + i);
+    const response = await fetch(import.meta.env.VITE_BASE_URL + '/anime/' + router.currentRoute.value.params.id + '/episodes/' + i);
     const data = await response.json();
     urls.value.push(data.data);
   }

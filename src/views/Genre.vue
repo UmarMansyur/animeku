@@ -25,7 +25,7 @@ import { hideLoader, showLoader } from '../helpers/loader';
 
 const genres = ref<any>([]);
 const loadGenres = async () => {
-  const response = await fetch('http://localhost:3000/v1/genres');
+  const response = await fetch(import.meta.env.VITE_BASE_URL + '/genres');
   const data = await response.json();
   genres.value = data.data;
 };

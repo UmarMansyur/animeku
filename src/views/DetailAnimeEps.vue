@@ -8,14 +8,14 @@ const router = useRouter();
 const anime = ref<any>({});
 
 const loadAnime = async () => {
-  const response = await fetch(import.meta.env.VITE_BASE_URL + '/' + router.currentRoute.value.params.name);
+  const response = await fetch(import.meta.env.VITE_BASE_URL + '/anime/' + router.currentRoute.value.params.name);
   const data = await response.json();
   anime.value = data.data;
 };
 
 const urls = ref<any>([]);
 const loadUrls = async () => {
-  const response = await fetch(import.meta.env.VITE_BASE_URL + '/' + router.currentRoute.value.params.name + '/episodes/' + router.currentRoute.value.params.id);
+  const response = await fetch(import.meta.env.VITE_BASE_URL + '/anime/' + router.currentRoute.value.params.name + '/episodes/' + router.currentRoute.value.params.id);
   const data = await response.json();
   urls.value = data.data;
 };
@@ -23,7 +23,7 @@ const loadUrls = async () => {
 const previos = async (slug: string) => {
   if (slug) {
     showLoader();
-    const response = await fetch('http://localhost:3000/v1/episode/' + slug);
+    const response = await fetch(import.meta.env.VITE_BASE_URL + '/episode/' + slug);
     const data = await response.json();
     urls.value = data.data;
     hideLoader();
@@ -33,7 +33,7 @@ const previos = async (slug: string) => {
 const nextPage = async (slug: string) => {
   if (slug) {
     showLoader();
-    const response = await fetch('http://localhost:3000/v1/episode/' + slug);
+    const response = await fetch(import.meta.env.VITE_BASE_URL + '/episode/' + slug);
     const data = await response.json();
     urls.value = data.data;
     hideLoader();

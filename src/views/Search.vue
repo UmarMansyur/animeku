@@ -30,7 +30,7 @@ const route = useRoute();
 const result = ref<any>([]);
 
 const loadSearch = async () => {
-  const response = await fetch(`http://localhost:3000/v1/search/${route.params.query}`);
+  const response = await fetch(`${import.meta.env.VITE_BASE_URL}/search/${route.params.query}`);
   const data = await response.json();
   result.value = data.data;
 };
