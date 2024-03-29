@@ -8,6 +8,7 @@ import { showLoader, hideLoader } from '../helpers/loader';
 const datas = ref<any>({ ongoing_anime: [], complete_anime: [] });
 
 async function loadAnimeHome() {
+  console.log(import.meta.env.VITE_BASE_URL);
   const response = await fetch(import.meta.env.VITE_BASE_URL + '/home');
   const data = await response.json();
   datas.value = data.data;
